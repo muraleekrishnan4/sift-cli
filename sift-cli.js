@@ -52,7 +52,7 @@ Options:
   --verbose             Display verbose logging
 `
 
-const saltstackVersion = '3001'
+const saltstackVersion = '3002'
 const pubKey = `
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: GPGTools - http://gpgtools.org
@@ -347,7 +347,7 @@ const downloadReleaseFile = (version, filename) => {
 
   return new Promise((resolve, reject) => {
     const output = fs.createWriteStream(filepath)
-    const req = request.get(`https://github.com/teamdfir/sift-saltstack/releases/download/${version}/${filename}`)
+    const req = request.get(`https://github.com/teamdfir/sift-saltstack/releases/download/v${version}/${filename}`)
     req.on('error', (err) => {
       reject(err)
     })
